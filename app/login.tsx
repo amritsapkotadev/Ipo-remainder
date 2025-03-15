@@ -7,14 +7,14 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
-    // Here, you can add authentication logic
-    if (email && password) {
-      router.push('/mainpage'); // Redirect to Mainpage after login
-    } else {
-      alert('Please enter email and password');
-    }
-  };
+//   const handleLogin = () => {
+//     // Here, you can add authentication logic
+//     if (email && password) {
+//       router.push('/mainpage'); // Redirect to Mainpage after login
+//     } else {
+//       alert('Please enter email and password');
+//     }
+//   };
 
   return (
     <View style={styles.container}>
@@ -36,7 +36,7 @@ const Login = () => {
         onChangeText={setPassword}
       />
 
-      <TouchableOpacity style={styles.button} onPress={handleLogin}>
+      <TouchableOpacity style={styles.button} onPress={() => router.push('/home')}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
 

@@ -6,7 +6,6 @@ const List = () => {
 
   return (
     <View>
-      <Button title="Home" onPress={() => router.push('/firstlandingpage')} />
       <Text>Home</Text>
     </View>
   );
