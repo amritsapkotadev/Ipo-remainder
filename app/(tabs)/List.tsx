@@ -11,11 +11,6 @@ const List = () => {
       live market // here goes an api call to get live market data
     </Text>
    </View>
-   <View>
-    <Text>
-      IPO // here goes an api call to get IPO data
-    </Text>
-   </View>
     </View>
   );
 };
