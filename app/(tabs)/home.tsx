@@ -12,7 +12,9 @@ const home = () => {
   return (
     <View>
        <Button title="Home" onPress={()=>{ }}/>
-      <Text>Home</Text>
+      <view>
+        
+      </view>
 
 
     </View>

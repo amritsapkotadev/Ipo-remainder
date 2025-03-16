@@ -6,11 +6,27 @@ const List = () => {
 
   return (
     <View>
-      <Text>Home</Text>
+   <View style={styles.livemarketupdate}>
+    <Text>
+      live market // here goes an api call to get live market data
+    </Text>
+   </View>
+   <View>
+    <Text>
+      IPO // here goes an api call to get IPO data
+    </Text>
+   </View>
     </View>
   );
 };
 
 export default List;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  livemarketupdate:{
+    fontSize:30,
+    fontWeight:'bold',
+    textAlign:'center',
+    marginTop:50,
+  }
+});
