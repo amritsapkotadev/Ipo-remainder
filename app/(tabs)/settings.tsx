@@ -1,56 +1,59 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, Switch, Button, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, Switch, Button, TouchableOpacity, Image } from "react-native";
 
 const Settings = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isNotificationsEnabled, setIsNotificationsEnabled] = useState(true);
 
   const handleSave = () => {
-    // Logic to save the settings
     console.log("Settings saved!");
   };
 
   const handleChangePassword = () => {
     console.log("Change Password pressed");
-    // Add navigation or functionality for changing password
   };
 
   const handleFaceIdSetup = () => {
     console.log("Face ID Setup pressed");
-    // Add navigation or functionality for Face ID setup
   };
 
   const handleDeleteAccount = () => {
     console.log("Delete Account pressed");
-    // Add functionality for deleting account
   };
 
   return (
-
-
-
     <View style={styles.container}>
+      {/* Profile Card */}
+      <View style={styles.profileCard}>
+        <Image
+          source={{ uri: "https://randomuser.me/api/portraits/men/1.jpg" }} // Placeholder image URL
+          style={styles.profileImage}
+        />
+        <Text style={styles.profileName}>John Doe</Text>
+        <Text style={styles.profileEmail}>john.doe@example.com</Text>
+      </View>
+
+      {/* Settings Title */}
       <Text style={styles.title}>Settings</Text>
 
       {/* Additional Settings */}
       <View style={styles.additionalSettings}>
-      <View style={styles.settingItem}>
-        <Text style={styles.settingText}>Dark Mode</Text>
-        <Switch
-          value={isDarkMode}
-          onValueChange={() => setIsDarkMode((prevState) => !prevState)}
-        />
-      </View>
-       {/* Notifications Toggle */}
-       <View style={styles.settingItem}>
-        <Text style={styles.settingText}>Notifications</Text>
-        <Switch
-          value={isNotificationsEnabled}
-          onValueChange={() =>
-            setIsNotificationsEnabled((prevState) => !prevState)
-          }
-        />
-      </View>
+        <View style={styles.settingItem}>
+          <Text style={styles.settingText}>Dark Mode</Text>
+          <Switch
+            value={isDarkMode}
+            onValueChange={() => setIsDarkMode((prevState) => !prevState)}
+          />
+        </View>
+
+        <View style={styles.settingItem}>
+          <Text style={styles.settingText}>Notifications</Text>
+          <Switch
+            value={isNotificationsEnabled}
+            onValueChange={() => setIsNotificationsEnabled((prevState) => !prevState)}
+          />
+        </View>
+
         {/* Change Password */}
         <TouchableOpacity style={styles.settingOption} onPress={handleChangePassword}>
           <Text style={styles.settingItemHeading}>Change Password</Text>
@@ -69,8 +72,11 @@ const Settings = () => {
           <Text style={styles.settingItemSubheading}>Delete this account permanently</Text>
         </TouchableOpacity>
       </View>
-       <View style={styles.logoutsection}> <Text style={styles.settingitemheading}> Logout</Text> </View>
-      
+
+      {/* Logout Section */}
+      <View style={styles.logoutSection}>
+        <Text style={styles.logoutText}>Logout</Text>
+      </View>
     </View>
   );
 };
@@ -79,13 +85,41 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+    backgroundColor: "#f8f8f8",
+  },
+  profileCard: {
+    flexDirection: "column",
+    alignItems: "center",
     backgroundColor: "#fff",
+    padding: 20,
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    marginBottom: 30,
+    marginTop: 20,
+  },
+  profileImage: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    marginBottom: 10,
+  },
+  profileName: {
+    fontSize: 22,
+    fontWeight: "bold",
+    color: "#333",
+  },
+  profileEmail: {
+    fontSize: 16,
+    color: "#666",
   },
   title: {
     fontSize: 28,
     fontWeight: "bold",
     textAlign: "center",
-marginTop: 30,
+    marginBottom: 20,
   },
   settingItem: {
     flexDirection: "row",
@@ -106,7 +140,6 @@ marginTop: 30,
   settingItemSubheading: {
     fontSize: 15,
     color: "#666",
-    
   },
   additionalSettings: {
     marginTop: 30,
@@ -117,24 +150,22 @@ marginTop: 30,
     borderRadius: 8,
     borderWidth: 1,
     borderColor: "#ddd",
+    backgroundColor: "#fff",
   },
-  logoutsection: {
+  logoutSection: {
     marginTop: 30,
-    padding: 10,
+    padding: 15,
     borderRadius: 8,
     borderWidth: 1,
     borderColor: "#ddd",
     backgroundColor: "#007BFF",
-    color: "#fff",
-    textAlign: "center",
+    alignItems: "center",
   },
-  settingitemheading: {
+  logoutText: {
     fontSize: 20,
     color: "#fff",
-    textAlign: "center",
     fontWeight: "bold",
   },
-
 });
 
 export default Settings;
