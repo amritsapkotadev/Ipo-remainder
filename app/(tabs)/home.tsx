@@ -36,6 +36,10 @@ export default function JobSearchHome() {
           <Text style={styles.buttonText}>Search</Text>
         </TouchableOpacity>
       </View>
+      <View style={styles.joblistings}>
+        <Text>applied jobs</Text>
+
+      </View>
     </View>
   );
 }
@@ -106,4 +110,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
   },
+  joblistings: {
+    marginTop: 20,
+  },
+
 });
